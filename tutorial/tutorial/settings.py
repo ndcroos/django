@@ -14,7 +14,18 @@ import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+print("BASE_DIR: " + BASE_DIR)
 
+# References templates directory. os.path.joins joins multiple paths.
+# Note: always concatenate system paths together using os.path.join()
+TEMPLATE_DIR = os.path.join(BASE_DIR, 'templates')
+print("TEMPLATE_DIR: " + TEMPLATE_DIR)
+
+STATIC_DIR = os.path.join(BASE_DIR, 'static')
+print("STATIC_DIR " + STATIC_DIR)
+
+MEDIA_DIR = os.path.join(BASE_DIR, 'media')
+print("MEDIA_DIR: " + MEDIA_DIR)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
@@ -52,6 +63,7 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'tutorial.urls'
 
+# DIRS: where templates are stored
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
@@ -117,5 +129,5 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
-
+# the URL with which static files can be accessed through clients (like a browser).
 STATIC_URL = '/static/'
